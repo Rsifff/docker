@@ -95,6 +95,7 @@ function pluginszsh() {
 function main() {
 	update
 	apt_packages
+	filesystem
 	fonts
 	ohmyzsh
 	tools
