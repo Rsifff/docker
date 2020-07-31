@@ -42,35 +42,18 @@ function fonts() {
 function ohmyzsh() {
 	colorecho "[+] Installing Oh-My-Zsh, config, aliases"
 
-#Retrieving the path of the home files
-	getent passwd | cut -d: -f6 | grep -w root >> listhomeuser
-	getent passwd | cut -d: -f6 | grep home >>listhomeuser
-	file=$(tail listhomeuser)
-
-	for homeuser in $file ; do
-		if [[ $homeuser = "/home/syslog" || $homeuser = "/home/cups-pk-helper" ]]; then
-			echo " "
-		else
-			pathuser="$homeuser/"
-
 			colorecho "[+] Installing Oh-My-Zsh"
 			sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 		
 			colorecho "[+] Installation of configuration files"
 			wget -O /root/.tmux.conf https://raw.githubusercontent.com/Rsifff/dotfiles/master/.tmux.conf
 			wget -O /root/.zshrc https://raw.githubusercontent.com/Rsifff/dotfiles/master/.zshrc
-			if [[ $homeuser != "/root" ]]; then
-				#cp -r /root/.oh-my-zsh $pathuser.oh-my-zsh	#copy the .ohmyzsh file for all users
-			fi
 			#Install the theme and plugins
 			git clone https://github.com/romkatv/powerlevel10k.git /root/.oh-my-zsh/themes/powerlevel10k
   			git clone https://github.com/zsh-users/zsh-autosuggestions.git /root/.oh-my-zsh/plugins/zsh-autosuggestions
 			git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /root/.oh-my-zsh/plugins/zsh-syntax-highlighting
 			git clone https://github.com/zsh-users/zsh-completions.git /root/.oh-my-zsh/plugins/zsh-completions
 			source /root/.zshrc
-		fi
-	done	
-	rm -f listhomeuser
 }
 
 function tools() {
