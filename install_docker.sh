@@ -29,16 +29,6 @@ function filesystem() {
 	mkdir -p /opt/tools/bin/ /share/
 }
 
-function fonts() {
-	colorecho "[+] Installing NerdFont"
-	mkdir -p /usr/share/fonts/truetype/hack/
-	wget https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip -O /usr/share/fonts/truetype/hack/Hack-v3.003-ttf.zip
-	wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete.ttf -O /usr/share/fonts/truetype/hack/Hack_Reg_Nerdfont_Complete.ttf
-	cd /usr/share/fonts/truetype/hack/
-	unzip Hack-v3.003-ttf.zip
-	fc-cache -v -f
-}
-
 function ohmyzsh() {
 	colorecho "[+] Installing Oh-My-Zsh, config, aliases"
 
@@ -78,7 +68,6 @@ function main() {
 	update
 	apt_packages
 	filesystem
-	fonts
 	ohmyzsh
 	tools
 	pluginszsh
