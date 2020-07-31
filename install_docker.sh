@@ -25,8 +25,8 @@ function update() {
 }
 
 function filesystem() {
-	  colorecho "[+] Preparing filesystem"
-	    mkdir -p /opt/tools/ /opt/tools/bin/ /share/
+	colorecho "[+] Preparing filesystem"
+	mkdir -p /opt/tools/bin/ /share/
 }
 
 function fonts() {
@@ -57,18 +57,17 @@ function ohmyzsh() {
 			sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 		
 			colorecho "[+] Installation of configuration files"
-			wget -O $pathuser.zprofile https://raw.githubusercontent.com/Rsifff/dotfiles/master/.zprofile
-			wget -O $pathuser.tmux.conf https://raw.githubusercontent.com/Rsifff/dotfiles/master/.tmux.conf
-			wget -O $pathuser.zshrc https://raw.githubusercontent.com/Rsifff/dotfiles/master/.zshrc
+			wget -O /root/.tmux.conf https://raw.githubusercontent.com/Rsifff/dotfiles/master/.tmux.conf
+			wget -O /root/.zshrc https://raw.githubusercontent.com/Rsifff/dotfiles/master/.zshrc
 			if [[ $homeuser != "/root" ]]; then
-				cp -r /root/.oh-my-zsh $pathuser.oh-my-zsh	#copy the .ohmyzsh file for all users
+				#cp -r /root/.oh-my-zsh $pathuser.oh-my-zsh	#copy the .ohmyzsh file for all users
 			fi
 			#Install the theme and plugins
-			git clone https://github.com/romkatv/powerlevel10k.git $pathuser.oh-my-zsh/themes/powerlevel10k
-  			git clone https://github.com/zsh-users/zsh-autosuggestions.git $pathuser.oh-my-zsh/plugins/zsh-autosuggestions
-			git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $pathuser.oh-my-zsh/plugins/zsh-syntax-highlighting
-			git clone https://github.com/zsh-users/zsh-completions.git $pathuser.oh-my-zsh/plugins/zsh-completions
-			source $pathuser.zshrc
+			git clone https://github.com/romkatv/powerlevel10k.git /root/.oh-my-zsh/themes/powerlevel10k
+  			git clone https://github.com/zsh-users/zsh-autosuggestions.git /root/.oh-my-zsh/plugins/zsh-autosuggestions
+			git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /root/.oh-my-zsh/plugins/zsh-syntax-highlighting
+			git clone https://github.com/zsh-users/zsh-completions.git /root/.oh-my-zsh/plugins/zsh-completions
+			source /root/.zshrc
 		fi
 	done	
 	rm -f listhomeuser
