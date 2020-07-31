@@ -21,7 +21,7 @@ function update() {
 
 	function apt_packages() {
 	colorecho "[+] Installing APT packages"
-	apt install -y curl zsh python3-pip git tmux neofetch wget
+	apt install -y curl zsh python3-pip git tmux neofetch wget setxkbmap
 }
 
 function filesystem() {
@@ -31,19 +31,18 @@ function filesystem() {
 
 function ohmyzsh() {
 	colorecho "[+] Installing Oh-My-Zsh, config, aliases"
-
-			colorecho "[+] Installing Oh-My-Zsh"
-			sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-		
-			colorecho "[+] Installation of configuration files"
-			wget -O /root/.tmux.conf https://raw.githubusercontent.com/Rsifff/dotfiles/master/.tmux.conf
-			wget -O /root/.zshrc https://raw.githubusercontent.com/Rsifff/dotfiles/master/.zshrc
-			#Install the theme and plugins
-			git clone https://github.com/romkatv/powerlevel10k.git /root/.oh-my-zsh/themes/powerlevel10k
-  			git clone https://github.com/zsh-users/zsh-autosuggestions.git /root/.oh-my-zsh/plugins/zsh-autosuggestions
-			git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /root/.oh-my-zsh/plugins/zsh-syntax-highlighting
-			git clone https://github.com/zsh-users/zsh-completions.git /root/.oh-my-zsh/plugins/zsh-completions
-			source /root/.zshrc
+	colorecho "[+] Installing Oh-My-Zsh"
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+	colorecho "[+] Installation of configuration files"
+	wget -O /root/.tmux.conf https://raw.githubusercontent.com/Rsifff/dotfiles/master/.tmux.conf
+	wget -O /root/.zshrc https://raw.githubusercontent.com/Rsifff/dotfiles/master/.zshrc
+	
+	#Install the theme and plugins
+	git clone https://github.com/romkatv/powerlevel10k.git /root/.oh-my-zsh/themes/powerlevel10k
+	git clone https://github.com/zsh-users/zsh-autosuggestions.git /root/.oh-my-zsh/plugins/zsh-autosuggestions
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /root/.oh-my-zsh/plugins/zsh-syntax-highlighting
+	git clone https://github.com/zsh-users/zsh-completions.git /root/.oh-my-zsh/plugins/zsh-completions
+	source /root/.zshrc
 }
 
 function tools() {
