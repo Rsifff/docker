@@ -34,8 +34,8 @@ function ohmyzsh() {
 	colorecho "[+] Installing Oh-My-Zsh"
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 	colorecho "[+] Installation of configuration files"
-	wget -O /root/.tmux.conf https://raw.githubusercontent.com/Rsifff/dotfiles/master/.tmux.conf
-	wget -O /root/.zshrc https://raw.githubusercontent.com/Rsifff/dotfiles/master/.zshrc
+	wget -O /root/.tmux.conf https://raw.githubusercontent.com/Rsifff/dockers/master/.tmux.conf
+	wget -O /root/.zshrc https://raw.githubusercontent.com/Rsifff/docker/master/install_docker.sh
 	
 	#Install the theme and plugins
 	git clone https://github.com/romkatv/powerlevel10k.git /root/.oh-my-zsh/themes/powerlevel10k
