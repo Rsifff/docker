@@ -21,7 +21,7 @@ function update() {
 
 function apt_packages() {
 	colorecho "[+] Installing APT packages"
-	apt install -y curl zsh python3-pip git tmux neofetch wget gobuster gem make
+	apt install -y curl zsh python3-pip git tmux neofetch wget gobuster gem dirb crunch dnsenum enum4linux exploitdb ftp hashcat hydra john metasploit-framework mimikatz ncat netcat-traditional nikto nmap patator php samba seclists smbclient smbmap snmp sqlmap vim theharvester weevely wfuzz ssh wpscan smtp-user-enum cewl dotdotpwn rlwrap telnet pst-utils mariadb-client aircrack-ng dnsrecon powersploit samdump2
 }
 
 function filesystem() {
@@ -121,6 +121,7 @@ else
       	sleep 5
         main "$@"
 fi
+echo -e " \n"
 colorecho "\e[5m                             End of installation 				   "
 colorecho "================================================================================"
 colorecho "   Replace your terminal's font with Hack Nerd Font Regular to get the icons" 
