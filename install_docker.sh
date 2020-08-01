@@ -21,7 +21,7 @@ function update() {
 
 function apt_packages() {
 	colorecho "[+] Installing APT packages"
-	apt install -y curl zsh python3-pip git docker.io tmux neofetch wget gobuster gem dirb crunch dnsenum enum4linux exploitdb ftp hashcat hydra john metasploit-framework mimikatz ncat netcat-traditional nikto nmap patator php samba seclists smbclient smbmap snmp sqlmap vim theharvester weevely wfuzz ssh wpscan smtp-user-enum cewl dotdotpwn rlwrap telnet pst-utils mariadb-client aircrack-ng dnsrecon powersploit samdump2
+	apt install -y curl zsh python3-pip git tmux neofetch wget gobuster gem dirb crunch dnsenum enum4linux exploitdb ftp hashcat hydra john metasploit-framework mimikatz ncat netcat-traditional nikto nmap patator php samba seclists smbclient smbmap snmp sqlmap vim theharvester weevely wfuzz ssh wpscan smtp-user-enum cewl dotdotpwn rlwrap telnet pst-utils mariadb-client aircrack-ng dnsrecon powersploit samdump2
 }
 
 function filesystem() {
