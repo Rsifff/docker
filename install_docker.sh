@@ -113,14 +113,8 @@ function main() {
 	pluginszsh
 }
 
-if [[ $EUID -ne 0 ]]; then
-	echo "You must be a root user" 2>&1
-else
-	echo "[!] Warning: This script is created to be executed in a docker"
-    	echo "[*] Sleeping 5 seconds, just in case... You can still stop this"
-      	sleep 5
         main "$@"
-fi
+
 echo -e " \n"
 colorecho "\e[5m                             End of installation 				   "
 colorecho "================================================================================"
