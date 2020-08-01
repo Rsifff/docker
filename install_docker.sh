@@ -19,9 +19,9 @@ function update() {
 	apt -y update && apt -y install apt-utils && apt -y upgrade && apt -y autoremove && apt clean
 }
 
-	function apt_packages() {
+function apt_packages() {
 	colorecho "[+] Installing APT packages"
-	apt install -y curl zsh python3-pip git tmux neofetch wget setxkbmap
+	apt install -y curl zsh python3-pip git tmux neofetch wget gobuster
 }
 
 function filesystem() {
@@ -48,6 +48,42 @@ function ohmyzsh() {
 function tools() {
 	colorecho "[+] Installing tools "
 	pip3 install lolcat
+	pip3 install updog
+}
+
+function shellerator() {
+	colorecho "[+] Installing shellerator"
+	git -C /opt/tools clone https://github.com/ShutdownRepo/shellerator
+	cd /opt/tools/shellerator
+	pip3 install -r requirements.txt
+}
+
+function kadimus() {
+	colorecho "[+] Installing kadimus"
+	apt -y install libcurl4-openssl-dev libpcre3-dev libssh-dev
+	git -C /opt/tools/ clone https://github.com/P0cL4bs/Kadimus
+	cd /opt/tools/Kadimus
+	make
+}
+
+function evilwinrm() {
+	colorecho "[+] Installing evil-winrm"
+	gem install evil-winrm
+}
+
+function jwt_tool() {
+	colorecho "[+] Installing JWT tool"
+	git -C /opt/tools/ clone https://github.com/ticarpi/jwt_tool
+	pip3 install pycryptodomex
+}
+
+function CrackMapExec() {
+  	colorecho "[+] Downloading CrackMapExec"
+	apt -y install libssl-dev libffi-dev python-dev build-essential python3-winrm
+	git -C /opt/tools/ clone --recursive https://github.com/byt3bl33d3r/CrackMapExec
+	cd /opt/tools/CrackMapExec
+	git submodule update --recursive
+	python3 setup.py install
 }
 
 function pluginszsh() {
@@ -68,6 +104,11 @@ function main() {
 	apt_packages
 	filesystem
 	ohmyzsh
+	shellerator	
+	kadimuss
+	evilwinrm
+	jwt_tool
+	CrackMapExec
 	tools
 	pluginszsh
 }
