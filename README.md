@@ -1,6 +1,6 @@
 # Docker
 
-This project to practice the bash language and discover the docker
+This project was carried out to practice bash language and discover the docker environment.
 
 ## Installation
 
