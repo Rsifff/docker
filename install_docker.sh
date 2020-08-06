@@ -49,7 +49,7 @@ function tools() {
 	colorecho "[+] Installing tools "
 	pip3 install lolcat
 	pip3 install updog
-	cargo install lsd
+	cargo install lsd --force
 }
 
 function pluginszsh() {
