@@ -21,7 +21,7 @@ function update() {
 
 function apt_packages() {
 	colorecho "[+] Installing APT packages"
-	apt install -y curl zsh python3-pip git tmux neofetch wget gobuster gem dirb crunch dnsenum enum4linux exploitdb ftp hashcat hydra john metasploit-framework mimikatz ncat netcat-traditional nikto nmap patator php samba seclists smbclient smbmap snmp sqlmap vim theharvester weevely wfuzz ssh wpscan smtp-user-enum cewl dotdotpwn rlwrap telnet pst-utils mariadb-client aircrack-ng dnsrecon powersploit samdump2
+	apt install -y kali-linux-full curl zsh python3-pip git tmux wget 
 }
 
 function filesystem() {
@@ -51,41 +51,6 @@ function tools() {
 	pip3 install updog
 }
 
-function shellerator() {
-	colorecho "[+] Installing shellerator"
-	git -C /opt/tools clone https://github.com/ShutdownRepo/shellerator
-	cd /opt/tools/shellerator
-	pip3 install -r requirements.txt
-}
-
-function kadimus() {
-	colorecho "[+] Installing kadimus"
-	apt -y install libcurl4-openssl-dev libpcre3-dev libssh-dev
-	git -C /opt/tools/ clone https://github.com/P0cL4bs/Kadimus
-	cd /opt/tools/Kadimus
-	make
-}
-
-function evilwinrm() {
-	colorecho "[+] Installing evil-winrm"
-	gem install evil-winrm
-}
-
-function jwt_tool() {
-	colorecho "[+] Installing JWT tool"
-	git -C /opt/tools/ clone https://github.com/ticarpi/jwt_tool
-	pip3 install pycryptodomex
-}
-
-function CrackMapExec() {
-  	colorecho "[+] Downloading CrackMapExec"
-	apt -y install libssl-dev libffi-dev python-dev build-essential python3-winrm
-	git -C /opt/tools/ clone --recursive https://github.com/byt3bl33d3r/CrackMapExec
-	cd /opt/tools/CrackMapExec
-	git submodule update --recursive
-	python3 setup.py install
-}
-
 function pluginszsh() {
 	colorecho "[+] Installing Plugins"
 	
@@ -104,16 +69,11 @@ function main() {
 	apt_packages
 	filesystem
 	ohmyzsh
-	shellerator	
-	kadimuss
-	evilwinrm
-	jwt_tool
-	CrackMapExec
 	tools
 	pluginszsh
 }
 
-        main "$@"
+main "$@"
 
 echo -e " \n"
 colorecho "\e[5m                             End of installation 				   "
