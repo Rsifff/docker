@@ -20,8 +20,8 @@ function update() {
 }
 
 function apt_packages() {
-	colorecho "[+] Installing APT packages"
-	apt install -y kali-linux-full curl zsh python3-pip git tmux wget 
+	apt install -y kali-linux-full | yes 
+	apt install -y curl zsh python3-pip git tmux wget cargo
 }
 
 function filesystem() {
@@ -49,6 +49,7 @@ function tools() {
 	colorecho "[+] Installing tools "
 	pip3 install lolcat
 	pip3 install updog
+	cargo install lsd
 }
 
 function pluginszsh() {
