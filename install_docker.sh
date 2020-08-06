@@ -20,7 +20,7 @@ function update() {
 }
 
 function apt_packages() {
-	apt install -y kali-linux-full | yes 
+	apt install -y kali-linux-full 
 	apt install -y curl zsh python3-pip git tmux wget cargo
 }
 
