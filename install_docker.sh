@@ -49,7 +49,7 @@ function tools() {
 	colorecho "[+] Installing tools "
 	pip3 install lolcat
 	pip3 install updog
-	cargo install lsd --force
+	cargo install --git https://github.com/Peltoche/lsd.git --branch master --force
 }
 
 function pluginszsh() {
