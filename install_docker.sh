@@ -21,7 +21,7 @@ function update() {
 
 function apt_packages() {
 	apt install -y kali-linux-full 
-	apt install -y curl zsh python3-pip git tmux wget cargo
+	apt install -y curl zsh python3-pip git tmux wget 
 }
 
 function filesystem() {
@@ -49,7 +49,9 @@ function tools() {
 	colorecho "[+] Installing tools "
 	pip3 install lolcat
 	pip3 install updog
-	cargo install --git https://github.com/Peltoche/lsd.git --branch master --force
+	wget https://github.com/Peltoche/lsd/releases/download/0.17.0/lsd_0.17.0_amd64.deb
+	dpkg -i lsd_0.17.0_amd64.deb
+	rm -f lsd_0.17.0_amd64.deb
 }
 
 function pluginszsh() {
