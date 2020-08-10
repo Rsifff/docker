@@ -3,7 +3,6 @@
 #author             	: Roman Le Page (Rsifff)
 #date                	: 2020/07/31
 #version             	: 1.0
-#usage               	: $ chmod +x install_docker.sh && sudo ./install_docker.sh
 #======================================================================================
 
 function colorecho() {
