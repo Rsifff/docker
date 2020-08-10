@@ -1,10 +1,9 @@
 #!/bin/bash
 #filename            	: install_dotfiles.sh
-#description    	: This script is used to install the dotfiles of my github: https://github.com/Rsifff/dotfiles/
 #author             	: Roman Le Page (Rsifff)
 #date                	: 2020/07/31
 #version             	: 1.0
-#usage               	: $ chmod +x install_dotfiles.sh && sudo ./install_dotfiles.sh
+#usage               	: $ chmod +x install_docker.sh && sudo ./install_docker.sh
 #======================================================================================
 
 function colorecho() {
@@ -20,7 +19,6 @@ function update() {
 }
 
 function apt_packages() {
-	apt install -y kali-linux-full 
 	apt install -y curl zsh python3-pip git tmux wget 
 }
 
