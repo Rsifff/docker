@@ -45,7 +45,6 @@ function ohmyzsh() {
 function tools() {
 	colorecho "[+] Installing tools "
 	pip3 install lolcat
-	pip3 install updog
 	wget https://github.com/Peltoche/lsd/releases/download/0.17.0/lsd_0.17.0_amd64.deb
 	dpkg -i lsd_0.17.0_amd64.deb
 	rm -f lsd_0.17.0_amd64.deb

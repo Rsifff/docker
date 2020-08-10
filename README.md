@@ -17,7 +17,6 @@ This project was carried out to practice bash language and discover the docker e
 ## Tools 
 
 - [lolcat](https://github.com/busyloop/lolcat)
-- [neofetch](https://github.com/dylanaraps/neofetch)
 - [tmux](https://github.com/tmux/tmux/wiki)
 - [lsd (LSDeluxe)](https://github.com/Peltoche/lsd)
 
